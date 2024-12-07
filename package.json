@@ -1,0 +1,84 @@
+{
+  "publisher": "antfu",
+  "name": "gradio-lite",
+  "displayName": "Gradio Lite Syntax Highlight",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "description": "Highlight `<gradio-lite>` blocks in HTML files",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/antfu",
+  "homepage": "https://github.com/antfu/gradio-lite#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antfu/gradio-lite"
+  },
+  "bugs": {
+    "url": "https://github.com/antfu/gradio-lite/issues"
+  },
+  "sponsor": {
+    "url": "https://github.com/sponsors/antfu"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "res/icon.png",
+  "files": [
+    "LICENSE.md",
+    "dist/*",
+    "syntaxes/*",
+    "res/*"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "embeddedLanguages": {
+          "source.python": "python"
+        },
+        "scopeName": "text.html.embedded.python",
+        "path": "./syntaxes/gradio-lite-python.tmLanguage.json",
+        "injectTo": [
+          "text.html.derivative",
+          "text.html.basic"
+        ]
+      }
+    ]
+  },
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --external vscode",
+    "dev": "nr build --watch",
+    "prepare": "nr update",
+    "update": "vscode-ext-gen --output src/generated/meta.ts",
+    "lint": "eslint .",
+    "vscode:prepublish": "nr build",
+    "publish": "vsce publish --no-dependencies",
+    "pack": "vsce package --no-dependencies",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && nr publish"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.11.2",
+    "@antfu/ni": "^0.23.1",
+    "@types/node": "^22.10.1",
+    "@types/vscode": "^1.95.0",
+    "@vscode/vsce": "^3.2.1",
+    "bumpp": "^9.8.1",
+    "eslint": "^9.16.0",
+    "esno": "^4.8.0",
+    "pnpm": "^9.15.0",
+    "reactive-vscode": "^0.2.9",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8",
+    "vscode-ext-gen": "^0.5.0"
+  }
+}

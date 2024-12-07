@@ -1,0 +1,81 @@
+{
+  "name": "HTML with Embedded Python",
+  "scopeName": "text.html.embedded.python",
+  "injectionSelector": "L:text.html.basic, L:text.html.derivative",
+  "patterns": [
+    {
+      "include": "#gradio-file"
+    },
+    {
+      "include": "#gradio-requirements"
+    },
+    {
+      "include": "#gradio-lite"
+    }
+  ],
+  "repository": {
+    "gradio-lite": {
+      "begin": "(<gradio-lite\\b[^>]*>)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.tag.html"
+        }
+      },
+      "end": "(</gradio-lite>)",
+      "endCaptures": {
+        "1": {
+          "name": "entity.name.tag.html"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#gradio-requirements"
+        },
+        {
+          "include": "#python-code"
+        }
+      ]
+    },
+    "gradio-file": {
+      "begin": "(<gradio-file\\b[^>]*>)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.tag.html"
+        }
+      },
+      "end": "(</gradio-file>)",
+      "endCaptures": {
+        "1": {
+          "name": "entity.name.tag.html"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#python-code"
+        }
+      ]
+    },
+    "gradio-requirements": {
+      "begin": "(<gradio-requirements\\b[^>]*>)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.tag.html"
+        }
+      },
+      "end": "(</gradio-requirements>)",
+      "endCaptures": {
+        "1": {
+          "name": "entity.name.tag.html"
+        }
+      },
+      "contentName": "text.plain"
+    },
+    "python-code": {
+      "patterns": [
+        {
+          "include": "source.python"
+        }
+      ]
+    }
+  }
+}

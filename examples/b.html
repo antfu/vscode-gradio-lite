@@ -1,0 +1,20 @@
+<gradio-lite>
+	<gradio-requirements>
+		transformers_js_py
+	</gradio-requirements>
+	
+	<gradio-file name="app.py" entrypoint>
+		from transformers_js import import_transformers_js
+		import gradio as gr
+		
+		transformers = await import_transformers_js()
+		pipeline = transformers.pipeline
+		pipe = await pipeline('sentiment-analysis')
+		
+		async def classify(text):
+			return await pipe(text)
+		
+		demo = gr.Interface(classify, "textbox", "json")
+		demo.launch()
+	</gradio-file>
+</gradio-lite>
