@@ -33,9 +33,6 @@
   "engines": {
     "vscode": "^1.95.0"
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
   "contributes": {
     "grammars": [
       {
