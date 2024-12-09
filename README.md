@@ -3,21 +3,13 @@
 <a href="https://marketplace.visualstudio.com/items?itemName=antfu.gradio-lite" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/antfu.gradio-lite.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 <a href="https://kermanx.github.io/reactive-vscode/" target="__blank"><img src="https://img.shields.io/badge/made_with-reactive--vscode-%23007ACC?style=flat&labelColor=%23229863"  alt="Made with reactive-vscode" /></a>
 
-## Configurations
+Syntax-highlighting for [Gradio Lite](https://www.gradio.app/guides/gradio-lite) inside HTML files.
 
-<!-- configs -->
+![Screenshot](https://github.com/user-attachments/assets/8b29d904-d0fc-446f-9dbb-ac403ad6a5f8)
 
-**No data**
-
-<!-- configs -->
-
-## Commands
-
-<!-- commands -->
-
-**No data**
-
-<!-- commands -->
+> This extension does not provide any language features (yet). If you are interested in better language support, feel free to open an issue or contribute!
+>
+> Disclaimer: I am not a Python developer, I created this extension just because I happend to know a bit about TextMate grammars. This project is inspired by [Yuichiro Tachibana](https://www.whitphx.info/)'s talk at [FEDAY 2024](https://fequan.com/2024/).
 
 ## Sponsors
 
